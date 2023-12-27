@@ -1,4 +1,11 @@
-import { View, Text, SafeAreaView, Image, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  TextInput,
+  ScrollView,
+} from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import {
@@ -7,6 +14,7 @@ import {
   MagnifyingGlassIcon,
   AdjustmentsVerticalIcon,
 } from "react-native-heroicons/outline";
+import FoodCategories from "../components/FoodCategories";
 
 export default function HomeScreen() {
   const navigation = useNavigation();
@@ -52,7 +60,12 @@ export default function HomeScreen() {
       </View>
 
       {/* Body */}
-      <View></View>
+      <ScrollView>
+        {/* Categories */}
+        <FoodCategories />
+
+        {/* Featured Rows */}
+      </ScrollView>
     </SafeAreaView>
   );
 }
