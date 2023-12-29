@@ -1,7 +1,7 @@
 import { View, Text, ScrollView } from "react-native";
 import React from "react";
 import { ArrowRightIcon } from "react-native-heroicons/outline";
-import ResturantCard from "./ResturantCard";
+import ResturantFoodCard from "./ResturantFoodCard";
 
 const FeaturedRow = ({ id, title, description }) => {
   return (
@@ -22,7 +22,7 @@ const FeaturedRow = ({ id, title, description }) => {
         className="pt-4"
       >
         {/* Resturant cards */}
-        <ResturantCard
+        <ResturantFoodCard
           id={123}
           imageUrl="https://media-cdn.tripadvisor.com/media/photo-s/19/3b/00/06/sushi-place.jpg"
           title="Yo Sishi!"
