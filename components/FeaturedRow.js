@@ -52,7 +52,7 @@ const FeaturedRow = ({ id, title, description }) => {
             key={restaurant._id}
             id={restaurant._id}
             imageUrl={restaurant.image}
-            title={restaurant.title}
+            title={restaurant.name}
             rating={restaurant.rating}
             genre={restaurant.genre}
             address={restaurant.address}
