@@ -1,6 +1,8 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import { urlFor } from "../sanity";
+import { ArrowLeftIcon } from "react-native-heroicons/solid";
 
 const RestaurantScreen = () => {
   const navigation = useNavigation();
@@ -25,7 +27,20 @@ const RestaurantScreen = () => {
 
   return (
     <ScrollView>
-      <Text>{title}</Text>
+      <View className="relative">
+        <Image
+          source={{
+            uri: urlFor(imageUrl).url(),
+          }}
+          className="w-full h-56 bg-gray-300 p-4"
+        />
+        <TouchableOpacity
+          onPress={navigation.goBack}
+          className="absolute left-5 top-14 p-2 bg-gray-100 rounded-full"
+        >
+          <ArrowLeftIcon size={20} color="#00CCBB" />
+        </TouchableOpacity>
+      </View>
     </ScrollView>
   );
 };
