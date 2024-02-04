@@ -5,6 +5,6 @@ import resturantReducer from "./features/resturantSlice";
 export const store = configureStore({
   reducer: {
     basket: basketReducer,
-    resurant: resturantReducer,
+    resturant: resturantReducer,
   },
 });
