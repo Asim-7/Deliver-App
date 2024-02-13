@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,6 +37,17 @@ const BasketScreen = () => {
             className="rounded-full bg-gray-100 absolute top-3 right-5"
           >
             <XCircleIcon color="#00CCBB" height={50} width={50} />
+          </TouchableOpacity>
+        </View>
+
+        <View className="flex-row items-center space-x-4 px-4 py-3 bg-white my-3">
+          <Image
+            source={{ uri: "https://picsum.photos/200/300" }}
+            className="h-7 w-7 bg-gray-300 p-4 rounded-full"
+          />
+          <Text className="flex-1">Deliver in 50-75 mins</Text>
+          <TouchableOpacity>
+            <Text className="text-[#00CCBB]">Change</Text>
           </TouchableOpacity>
         </View>
       </View>
