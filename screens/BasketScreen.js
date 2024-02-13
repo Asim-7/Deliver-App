@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
 import { selectResturant } from "../features/resturantSlice";
-import { selectBasketItems } from "../features/basketSlice";
+import { removeFromBasket, selectBasketItems } from "../features/basketSlice";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { XCircleIcon } from "react-native-heroicons/solid";
 import { urlFor } from "../sanity";
@@ -66,6 +66,15 @@ const BasketScreen = () => {
               <Text className="text-gray-600">
                 <Currency quantity={items[0]?.price} currency="GBP" />
               </Text>
+
+              <TouchableOpacity>
+                <Text
+                  className="text-[#00CCBB] text-xs"
+                  onPress={() => dispatch(removeFromBasket({ id: key }))}
+                >
+                  Remove
+                </Text>
+              </TouchableOpacity>
             </View>
           ))}
         </ScrollView>
