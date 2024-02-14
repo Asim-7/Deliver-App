@@ -8,12 +8,14 @@ import {
   addToBasket,
   removeFromBasket,
   selectBasketItems,
-  selectBasketItemsWithId,
 } from "../features/basketSlice";
 
 const DishRow = ({ id, name, description, price, image }) => {
   const [isPressed, setIsPressed] = useState(false);
-  const items = useSelector((state) => selectBasketItemsWithId(state, id));
+  const items = useSelector((state) => selectBasketItems(state)); // "selectBasketItemsWithId" is not working correctly bkz need to define the type of this variable to resolve the issue of warning error
+  const lengthCountById = items.filter(
+    (singleItem) => singleItem.id === id
+  ).length;
   const dispatch = useDispatch();
 
   const addItemToBasket = () => {
@@ -21,7 +23,7 @@ const DishRow = ({ id, name, description, price, image }) => {
   };
 
   const removeItemFromBasket = () => {
-    if (!items.length > 0) return;
+    if (!lengthCountById > 0) return;
     dispatch(removeFromBasket({ id }));
   };
 
@@ -58,16 +60,16 @@ const DishRow = ({ id, name, description, price, image }) => {
         <View className="bg-white px-4">
           <View className="flex-row items-center space-x-2 pb-3">
             <TouchableOpacity
-              disabled={!items.length}
+              disabled={lengthCountById < 1}
               onPress={removeItemFromBasket}
             >
               <MinusCircleIcon
-                color={items.length > 0 ? "#00CCBB" : "gray"}
+                color={lengthCountById > 0 ? "#00CCBB" : "gray"}
                 size={40}
               />
             </TouchableOpacity>
 
-            <Text>{items.length}</Text>
+            <Text>{lengthCountById}</Text>
 
             <TouchableOpacity onPress={addItemToBasket}>
               <PlusCircleIcon color="#00CCBB" size={40} />
