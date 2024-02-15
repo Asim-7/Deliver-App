@@ -11,12 +11,12 @@ function DeliveryScreen() {
 
   return (
     <View className="bg-[#00CCBB] flex-1">
-      <SafeAreaView>
-        <View>
+      <SafeAreaView className="z-50">
+        <View className="flex-row justify-between items-center p-5">
           <TouchableOpacity onPress={() => navigation.navigate("Home")}>
             <XMarkIcon color="white" size={30} />
           </TouchableOpacity>
-          <Text>Order help</Text>
+          <Text className="font-light text-white text-lg">Order help</Text>
         </View>
       </SafeAreaView>
     </View>
