@@ -56,7 +56,18 @@ function DeliveryScreen() {
         }}
         className="flex-1 -mt-10 z-0"
         mapType="mutedStandard"
-      />
+      >
+        <Marker
+          coordinate={{
+            latitude: resturant.lat,
+            longitude: resturant.long,
+          }}
+          title={resturant.title}
+          description={resturant.short_desc}
+          identifier="origin"
+          pinColor="#00CCBB"
+        />
+      </MapView>
     </View>
   );
 }
