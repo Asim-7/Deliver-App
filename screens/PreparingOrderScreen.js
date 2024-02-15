@@ -9,7 +9,7 @@ function PreparingOrderScreen() {
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate("Delivery");
-    }, 2000);
+    }, 4000);
   }, []);
 
   return (
