@@ -15,6 +15,9 @@ This is React Native app for Android and iOS. Following things to expect:<br>
 🔥 Sanity CMS to power the app's backend, easily updates the contents of the app!<br>
 👉 Sleek animated checkout flow with an AWESOME UI/UX experience!<br>
 
+## Video
+https://github.com/user-attachments/assets/e13eb46a-8a44-44b0-a9c9-04551861c0c9
+
 ## Screenshots
 <div style="display: flex; justify-content: space-around;">
   <img src="https://github.com/Asim-7/Deliver-App/assets/25628828/acc3477e-e986-4cbb-8371-c3263303f7e0" alt="Screenshot 1" width="30%">
